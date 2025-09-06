@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: securewipe
+    env: docker
+    plan: starter
+    autoDeploy: true
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: SMTP_HOST
+      - key: SMTP_PORT
+      - key: SMTP_USER
+      - key: SMTP_PASS
+      - key: SMTP_FROM
+  - type: web
+    name: securewipe-verifier
+    env: docker
+    plan: starter
+    autoDeploy: true
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: PUBKEY_CONTENT
