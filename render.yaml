@@ -7,10 +7,16 @@ services:
     dockerfilePath: ./Dockerfile
     envVars:
       - key: SMTP_HOST
+        value: smtp.gmail.com
       - key: SMTP_PORT
+        value: "465"
       - key: SMTP_USER
+        value: ranjithkumarabba@gmail.com
       - key: SMTP_PASS
+        sync: false   # tells Render to set manually via dashboard
       - key: SMTP_FROM
+        sync: false
+
   - type: web
     name: securewipe-verifier
     env: docker
@@ -19,3 +25,4 @@ services:
     dockerfilePath: ./Dockerfile
     envVars:
       - key: PUBKEY_CONTENT
+        sync: false
